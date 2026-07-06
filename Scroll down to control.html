@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Video Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Loading frames...</p>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill" id="loaderBarFill"></div>
+      </div>
+      <p class="loader-count" id="loaderCount">0 / 132</p>
+    </div>
+  </div>
+
+  <!-- Intro Section -->
+  <section class="intro-section" id="intro">
+    <div class="intro-content">
+      <span class="intro-badge">SCROLL TO PLAY</span>
+      <h1 class="intro-title">Experience<br><span class="gradient-text">In Motion</span></h1>
+      <p class="intro-subtitle">Scroll down to control the video playback frame by frame. The further you scroll, the
+        more you see.</p>
+      <div class="scroll-hint">
+        <div class="scroll-mouse">
+          <div class="scroll-dot"></div>
+        </div>
+        <span>Scroll Down</span>
+      </div>
+    </div>
+    <div class="intro-glow"></div>
+  </section>
+
+  <!-- Video (Frame Sequence) Section -->
+  <section class="video-section" id="videoSection">
+    <div class="video-sticky-wrapper">
+      <div class="video-container" id="videoContainer">
+        <!-- Canvas for rendering frames -->
+        <canvas id="frameCanvas"></canvas>
+
+        <!-- Vignette Overlay -->
+        <div class="video-vignette"></div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Frame Counter -->
+        <div class="frame-counter" id="frameCounter">Frame 1 / 132</div>
+
+        <!-- Progress Percentage -->
+        <div class="progress-percentage" id="progressPercentage">0%</div>
+
+        <!-- Text Overlays -->
+        <div class="video-overlay overlay-1" data-show-at="0.05" data-hide-at="0.25">
+          <h2 class="overlay-title">Begin the Journey</h2>
+          <p class="overlay-text">Every great story starts with a single scroll</p>
+        </div>
+
+        <div class="video-overlay overlay-2" data-show-at="0.25" data-hide-at="0.50">
+          <h2 class="overlay-title">Feel the Motion</h2>
+          <p class="overlay-text">Immersive visuals controlled by you</p>
+        </div>
+
+        <div class="video-overlay overlay-3" data-show-at="0.50" data-hide-at="0.75">
+          <h2 class="overlay-title">Pure Cinema</h2>
+          <p class="overlay-text">Frame-perfect storytelling at your fingertips</p>
+        </div>
+
+        <div class="video-overlay overlay-4" data-show-at="0.75" data-hide-at="0.95">
+          <h2 class="overlay-title">The Finale</h2>
+          <p class="overlay-text">You've experienced it all</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outro Section -->
+  <section class="outro-section" id="outro">
+    <div class="outro-content">
+      <h2 class="outro-title">That was <span class="gradient-text">Beautiful</span></h2>
+      <p class="outro-subtitle">Scroll back up to experience it again.</p>
+      <button class="replay-btn" id="replayBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="1 4 1 10 7 10"></polyline>
+          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+        </svg>
+        Replay
+      </button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
